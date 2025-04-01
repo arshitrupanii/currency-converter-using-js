@@ -1,5 +1,5 @@
 import { countryList } from "./codes.js";
-const BASE_URL = "https://v6.exchangerate-api.com/v6/433f424dbcd5c29b755fb720/latest/USD";
+const BASE_URL = "https://v6.exchangerate-api.com/v6/API_KEY/latest/USD";
 
 let amount = document.querySelector(".input_amount").value || 1;
 let from_curren = document.querySelector(".from select").value;
