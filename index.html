@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertor - Arshit rupani</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/366351d6ff.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Currency convertor</h2>
+
+        <br>
+
+        <form id="my_form">
+            <p>Enter the number : </p>
+            <input type="text" class="input_amount" required>
+
+            <br>
+            <br>
+
+            <div class="dropdown">
+                <div class="from_container">
+                    <p>From</p>
+                    <div class="from">
+                        <img class="flag" src="https://flagsapi.com/US/flat/64.png" alt="">
+                        <select>
+                            <option value="USD">USD</option>
+                            <option value="INR">INR</option>
+                            <option value="EUR">EUR</option>
+                            <option value="AUD">AUD</option>
+                        </select>
+                    </div>
+                </div>
+
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                <div class="to_container">
+                    <p>To</p>
+                    <div class="to">
+                        <img class="flag" src="https://flagsapi.com/IN/flat/64.png" alt="">
+                        <select>
+                            <option value="USD">USD</option>
+                            <option value="INR" selected>INR</option>
+                            <option value="EUR">EUR</option>
+                            <option value="AUD">AUD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- end dropdown -->
+
+            <div class="submit_button">
+                <button type="submit">Get exchange</button>
+            </div>
+            <br>
+
+            <h3 style="display: flex; justify-content: center;" class="converter_text">1 USD = 80 INR</h3>
+        </form>
+    </div>
+
+    <script type="module" src="codes.js"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
