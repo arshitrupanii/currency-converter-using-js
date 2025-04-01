@@ -47,7 +47,7 @@ document.querySelector("#my_form").addEventListener("submit", async function (ev
     .then(response => response.json())
     .then(data => data.conversion_rates)
     .then(conversion_rates => {
-      return result_text = `${(conversion_rates[from_curren] * amount).toFixed(2)} ${from_curren} = ${(conversion_rates[to_curren] * amount).toFixed(2)} ${to_curren}`;
+      return result_text = `${(amount)} ${from_curren} = ${(conversion_rates[to_curren] * amount).toFixed(2)} ${to_curren}`;
     })
     .catch(error => console.error('Error fetching data:', error));
 
