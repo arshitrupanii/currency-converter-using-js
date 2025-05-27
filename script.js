@@ -1,17 +1,19 @@
 import { countryList } from "./codes.js";
-const BASE_URL = "https://v6.exchangerate-api.com/v6/API_KEY/latest/USD";
 
 let amount = document.querySelector(".input_amount").value || 1;
 let from_curren = document.querySelector(".from select").value;
 let to_curren = document.querySelector(".to select").value;
 let result_text = document.querySelector(".converter_text").textContent;
 let flag = document.querySelectorAll(".flag");
+let BASE_URL = `https://v6.exchangerate-api.com/v6/433f424dbcd5c29b755fb720/latest/${from_curren}`;
 
 
 // update value of user input
 document.querySelector(".from select").addEventListener("change", function () {
   from_curren = this.value;
   flag[0].src ? flag[0].src = `https://flagsapi.com/${countryList[from_curren]}/flat/64.png` : "";
+  BASE_URL = `https://v6.exchangerate-api.com/v6/433f424dbcd5c29b755fb720/latest/${from_curren}`;
+
 });
 
 document.querySelector(".to select").addEventListener("change", function () {
@@ -43,7 +45,7 @@ Object.entries(countryList).forEach(([key, value]) => {
 document.querySelector("#my_form").addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  let res_text = await fetch(BASE_URL)
+  let output_text = await fetch(BASE_URL)
     .then(response => response.json())
     .then(data => data.conversion_rates)
     .then(conversion_rates => {
@@ -51,5 +53,5 @@ document.querySelector("#my_form").addEventListener("submit", async function (ev
     })
     .catch(error => console.error('Error fetching data:', error));
 
-    document.querySelector(".converter_text").textContent = res_text;
+    document.querySelector(".converter_text").textContent = output_text;
 });

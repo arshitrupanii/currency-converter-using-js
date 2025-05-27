@@ -4,23 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Convertor - Arshit rupani</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Currency Converter - Arshit Rupani</title>
     <script src="https://kit.fontawesome.com/366351d6ff.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a2e;
+            padding: 20px;
+        }
+
+        .container {
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            background: #16213e;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .input_amount {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #0f0f23;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .input_amount:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+
+        .dropdown {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .from_container, .to_container {
+            flex: 1;
+        }
+
+        .from_container p, .to_container p {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .from, .to {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #0f0f23;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .from img, .to img {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        select {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            flex: 1;
+        }
+
+        select option {
+            background: #0f0f23;
+            color: #ffffff;
+        }
+
+        i {
+            color: #6366f1;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        i:hover {
+            transform: rotate(180deg);
+        }
+
+        .submit_button button {
+            width: 100%;
+            padding: 15px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .submit_button button:hover {
+            background: #5856eb;
+        }
+
+        .converter_text {
+            background: #0f0f23;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+            border: 1px solid #333;
+        }
+
+        @media (max-width: 480px) {
+            .dropdown {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            i {
+                transform: rotate(90deg);
+            }
+            
+            i:hover {
+                transform: rotate(270deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>Currency convertor</h2>
-
-        <br>
+        <h2>Currency Converter</h2>
 
         <form id="my_form">
-            <p>Enter the number : </p>
+            <p>Enter the number:</p>
             <input type="text" class="input_amount" required>
-
-            <br>
-            <br>
 
             <div class="dropdown">
                 <div class="from_container">
@@ -51,21 +204,17 @@
                     </div>
                 </div>
             </div>
-            <!-- end dropdown -->
 
             <div class="submit_button">
                 <button type="submit">Get exchange</button>
             </div>
-            <br>
 
-            <h3 style="display: flex; justify-content: center;" class="converter_text">1 USD = 80 INR</h3>
+            <h3 class="converter_text">1 USD = 80 INR</h3>
         </form>
     </div>
 
     <script type="module" src="codes.js"></script>
-    <script type="module" src="script.js">
-        // 433f424dbcd5c29b755fb720
-    </script>
+    <script type="module" src="script.js"></script>
 
 </body>
 
